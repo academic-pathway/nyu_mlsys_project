@@ -11,13 +11,7 @@ footer: MLSYS Presentation, SP24 [](https://code-cafe.nl)
 
 --- 
 
-## slide1
-
-
-
----
-
-## Vragen?
+## TEST (THIS WON'T BE INCLUDED)
 
 - E-mail mij op noah.beij@code-cafe.nl
 - Join de CodeCafé-community op Discord!
@@ -26,109 +20,28 @@ footer: MLSYS Presentation, SP24 [](https://code-cafe.nl)
 
 ---
 
-slide
-## 
-
-
+## Motivation
 
 ---
 
-mark
-options: | info | warning | error | success | question |
+## Problem Definition
 
-<mark class='info'>
-content
-</mark>
+---
 
-cols
-<div class='columns'>
-  <div>
-content
-  </div>
-  <div>
-content
-  </div>
-</div>
+## Main Contribution
 
-cols3
-<div class='columns-3'>
-  <div>
-content
-  </div>
-  <div>
-content
-  </div>
-  <div>
-content
-  </div>
-</div>
+---
 
-autocols
-<div class='auto'>
-  <div>
-content
-  </div>
-  <div>
-content
-  </div>
-</div>
+## Central Design/Idea (API)
 
-rows
-<div class='rows'>
-  <div>
-content
-  </div>
-  <div>
-content
-  </div>
-</div>
+--- 
 
-rows3
-<div class='rows-3'>
-  <div>
-content
-  </div>
-  <div>
-content
-  </div>
-  <div>
-content
-  </div>
-</div>
+## Central Design/Idea (Gradient Reduction - Naive Solution)
 
-autorows
-<div class='rows-auto'>
-  <div>
-content
-  </div>
-  <div>
-content
-  </div>
-</div>
+---
 
-challenge
-<div class='challenge'>
-<b>content</b>
-<hr/>
-content
-</div>
+## Central Design/Idea (Gradient Reduction - Gradient Bucketing)
 
-kbd
-<kbd>F</kbd>
+---
 
-table
-| header | header |
-| --- | --- |
-| content | content |
-| content | content |
-
-tablecolored
-options: | tableBlue | tableGreen |
-
-<div class='tableBlue'>
-
-| header | header |
-| --- | --- |
-| content | content |
-| content | content |
-</div>
+## Related Work
