@@ -1,10 +1,8 @@
 ---
 marp: true
-theme: default
-class:
-  - lead
-  - invert
-paginate: true
+theme: codecafe
+class: invert
+footer: MLSYS Presentation, SP24 [](https://code-cafe.nl)
 ---
 
 # PyTorch Distributed: Experiences on Accelerating Data Parallel Training
@@ -90,7 +88,7 @@ with ddp.no_sync():
 - **Why?**: NCCL is optimized for NVIDIA's GPU architecture, enabling more efficient multi-GPU communication.
 - **System Behavior**: The design of PyTorch DDP prioritizes overlapping communication with computation, a feature that NCCL exploits more effectively than GLOO.
 
-![Latency Breakdown](./latency_breakdown.png)
+![Latency Breakdown](./Latency.png)
 
 ---
 
