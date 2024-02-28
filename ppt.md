@@ -5,9 +5,11 @@ class: invert
 footer: MLSYS Presentation, SP24 [](https://code-cafe.nl)
 ---
 
-# PyTorch Distributed: Experiences on Accelerating Data Parallel Training
+# PyTorch Distributed: <br> Experiences on Accelerating Data Parallel Training
 ### Unveiling Efficiencies in Distributed Machine Learning
-###### Sanho Lee, Euijae Kim | Affiliation | 02/28/2024
+###### Sanho Lee, Euijae Kim | NYU Courant | 02/28/2024
+
+<!-- paginate: true -->
 
 ---
 # Main Contributions of the Work
