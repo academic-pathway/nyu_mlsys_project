@@ -25,6 +25,30 @@ footer: MLSYS Presentation, SP24 [](https://code-cafe.nl)
 - Demand the ability to scale out model training to more computational resources.
 
 ---
+
+# Problem Definition
+
+## Mathematical equivalence
+
+- Applications expect to harvest the same result model as if all training had been performed locally without model replication
+- DDP training and local training must be mathematically equivalent
+
+## Non-intrusive and interceptive API
+
+- No additional code change is required to integrate API into implementation
+- Allow the internal implementation to timely intercept signals to carry out communications and system optimizations
+
+---
+
+# Problem Definition (Cont.)
+
+## High performance
+
+-  Data parallel training is subject to subtle dependencies between computations and communications
+- The design and implementation have to explore the solution space to efficiently convert more resources into higher training throughput.
+
+---
+
 # Main Contributions of the Work
 
 1. **Design and Implementation Insight**: Offers a comprehensive view into the design and implementation of PyTorch's widely adopted, state-of-the-art distributed training solution.
