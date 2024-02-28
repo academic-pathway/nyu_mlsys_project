@@ -57,6 +57,44 @@ footer: MLSYS Presentation, SP24 [](https://code-cafe.nl)
 
 3. **Performance Tuning Experiences**: Shares valuable performance tuning insights gathered from internal teams and the open-source community, alongside several strategies for future enhancements in distributed data parallel training.
 
+---
+
+# Naive solution of Gradient Reduction
+
+## Goal
+
+1. Start from the same model state
+1. Consume the same gradients in every iteration
+
+## Autograd Hooks
+
+`DDP` adjusts the behavior of `loss.backward()` to compute average parameter gradients by registering hooks in PyTorch's autograd engine.
+
+--- 
+
+# Naive solution of Gradient Reduction (Cont.)
+
+## Concepts
+
+### When fired, each hook scans through all local model parameters, and retrieves the gradient tensor from each parameter. Then, it uses the AllReduce collective communication call to calculate the average gradients on each parameter across all processes, and writes the result back to the gradient tensor.
+
+---
+
+# Gradient Bucketing 
+
+## Motivation
+
+Observed that collective communications are more efficient on large tensors.
+
+## Maximize Bandwidth Utilization
+
+`AllReduce` operations are launched asynchronously and block waiting on all of them together, mimicking DDP’s gradient reduction algorithm
+
+---
+
+# Gradient Bucketing (Cont.)
+
+![70%](./gradient_bucketing.png)
 
 ---
 
