@@ -11,6 +11,19 @@ footer: MLSYS Presentation, SP24 [](https://code-cafe.nl)
 
 <!-- paginate: true -->
 
+--- 
+
+# Motivation
+
+## Data Parallelism
+ 
+- Has emerged as a popular solution for distributed training
+- Straightforward principle and broad applicability
+
+## Large Datasets and Large Models
+
+- Demands the ability to scale out model training to more computational resources.
+
 ---
 # Main Contributions of the Work
 
