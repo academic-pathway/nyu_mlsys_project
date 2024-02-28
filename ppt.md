@@ -87,31 +87,82 @@ with ddp.no_sync():
 - **Hypothesis Confirmation**: NCCL significantly reduces latency compared to GLOO, especially in the backward pass where communication is most intensive.
 - **Why?**: NCCL is optimized for NVIDIA's GPU architecture, enabling more efficient multi-GPU communication.
 - **System Behavior**: The design of PyTorch DDP prioritizes overlapping communication with computation, a feature that NCCL exploits more effectively than GLOO.
+---
+
+
+
+# Latency Breakdown & Communication Backend
 
 ![Latency Breakdown](./Latency.png)
 
----
 
+
+---
 # Optimal Bucket Size for Gradient Synchronization
 
 - **Hypothesis Confirmation**: Medium bucket sizes (10-25MB for ResNet50 with NCCL) optimize the trade-off between communication frequency and volume.
 - **Why?**: Smaller buckets cause frequent synchronization, increasing overhead. Larger buckets delay synchronization, causing idle GPU time.
 - **Experiment Design Insight**: By testing various bucket sizes, the study identifies a sweet spot where synchronization overhead is minimized without significant delays in gradient updates.
 
-![Bucket Size Optimization](./bucket_size_optimization.png)
 
 ---
 
+# Optimal Bucket Size for Gradient Synchronization
+
+
+![Bucket Size Optimization](./bucket_size_optimization.png)
+
+
+---
 # Scalability and Training Efficiency
 
 - **Overall Trend**: Increased latency with more GPUs, but higher throughput.
 - **Why?**: Additional GPUs increase the complexity of gradient synchronization across the network, leading to higher latency. However, the ability to train larger models or faster training of the same model showcases the system's scalability.
 - **System and Experiment Design**: The use of a shared entitlement environment for larger scale experiments introduces variable network performance, which could further impact latency. Yet, the design of PyTorch DDP to efficiently manage distributed training tasks shows the system's capability to scale, albeit with the expected increase in per-iteration latency.
 
+---
+
+# Scalability and Training Efficiency
+
+
 ![Scalability across GPUs](./scalability_across_gpus.png)
+
 
 ---
 
+# Comparison Between DDP and FSDP
+## Distributed Data Parallel (DDP)
+
+- **Mechanism**: Replicates the entire model across each device.
+- **Communication**: Synchronizes gradients across devices after the backward pass.
+- **Memory Constraint**: Each device must have enough memory to hold the entire model and its gradients.
+- **Use Case**: Effective for models that fit within the memory of a single device.
+
+---
+
+## Fully Sharded Data Parallel (FSDP)
+
+- **Mechanism**: Shards model parameters across devices, materializing them on-demand.
+- **Communication**: Reduces and distributes gradients on-the-fly, enabling training of models larger than the memory capacity of a single device.
+- **Memory Efficiency**: Significantly reduces peak memory consumption by only materializing needed parameters.
+- **Use Case**: Designed for large-scale models that exceed the memory capacity of individual devices.
+
+---
+
+![FSDP Architecture](./fsdp_architecture.png)
+
+---
+
+## Key Differences and Significance
+
+- **Scalability**: FSDP extends PyTorch's capability to train much larger models by optimizing memory usage and computation distribution.
+- **Model Size**: DDP is limited by the memory of a single device, whereas FSDP can handle models that span across multiple devices' memory.
+- **User Experience**: FSDP introduces deferred initialization for a more seamless user experience when scaling large models, a significant advancement over DDP.
+
+The transition from DDP to FSDP represents a significant shift towards more efficient, large-scale model training within the PyTorch ecosystem.
+
+
+---
 # Conclusion: PyTorch Distributed Data Parallel (DDP) Module
 
 ## Review of Problem and Its Complexity
