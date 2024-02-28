@@ -9,27 +9,25 @@ footer: MLSYS Presentation, SP24 [](https://code-cafe.nl)
 
 <br>
 <br>
-
-Sanho Lee () && Euijae Kim (ek3955)
+Sanho Lee (shl8607), Euijae Kim (ek3955)
 
 <!-- paginate: true -->
 
 --- 
 
-## TEST (THIS WON'T BE INCLUDED)
+<!-- ## TEST (THIS WON'T BE INCLUDED)
 
 - E-mail mij op noah.beij@code-cafe.nl
 - Join de CodeCafé-community op Discord!
 
-![bg right 80%](https://assets.nbeij.nl/marp/assets/codecafe.png)
-
----
+![bg right 70%](https://assets.nbeij.nl/marp/assets/codecafe.png) -->
 
 ## 1. Motivation
 
 - Distributed Training
   - Recent advances in deep learning argue for the value of large datasets and large models, which necessitates the ability to scale out model training to more computational resources.
 - Large datasets and large models
+- asdf
 
 ---
 
@@ -51,18 +49,21 @@ Sanho Lee () && Euijae Kim (ek3955)
 
 ## 4. Central Design/Idea (API)
 
-```python
-import torch
-```
 
 
 --- 
 
-## 4. Central Design/Idea (Gradient Reduction - Naive Solution)
+## 4. Central Design/Idea (Naive Solution of Gradient Reduction)
+
+```python
+import torch
+```
 
 ---
 
-## 4. Central Design/Idea (Gradient Reduction - Gradient Bucketing)
+## 4. Central Design/Idea (Gradient Bucketing)
+
+![70%](./gradient_bucketing.png)
 
 ---
 
