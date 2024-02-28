@@ -88,7 +88,7 @@ Observed that collective communications are more efficient on large tensors.
 
 ## Maximize Bandwidth Utilization
 
-`AllReduce` operations are launched asynchronously and block waiting on all of them together, mimicking DDP’s gradient reduction algorithm
+Use gradient reduction to bucket multiple gradients into one allreduce operation. However, DDP should not compact all gradients in one single allreduce, otherwise the communication cannot overlap with computation.
 
 ---
 
