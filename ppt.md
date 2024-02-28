@@ -30,13 +30,13 @@ footer: MLSYS Presentation, SP24 [](https://code-cafe.nl)
 
 ## Mathematical equivalence
 
-- Applications expect to harvest the same result model as if all training had been performed locally without model replication
+- Applications expect to harvest the same result model
 - DDP training and local training must be mathematically equivalent
 
 ## Non-intrusive and interceptive API
 
-- No additional code change is required to integrate API into implementation
-- Allow the internal implementation to timely intercept signals to carry out communications and system optimizations
+- Minimal code change is required to integrate API into implementation
+- Intercept signals to carry out communications and system optimizations
 
 ---
 
