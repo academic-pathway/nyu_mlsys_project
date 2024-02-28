@@ -15,35 +15,24 @@ Sanho Lee (shl8607), Euijae Kim (ek3955)
 
 --- 
 
-<!-- ## TEST (THIS WON'T BE INCLUDED)
+# Motivation
 
-- E-mail mij op noah.beij@code-cafe.nl
-- Join de CodeCafé-community op Discord!
+## Data Parallelism
+ 
+- Has emerged as a popular solution for distributed training
+- Straightforward principle and broad applicability
 
-![bg right 70%](https://assets.nbeij.nl/marp/assets/codecafe.png) -->
+## Large Datasets and Large Models
 
-## 1. Motivation
-
-- Distributed Training
-  - Recent advances in deep learning argue for the value of large datasets and large models, which necessitates the ability to scale out model training to more computational resources.
-- Large datasets and large models
-- asdf
+- Necessitates the ability to scale out model training to more computational resources.
 
 ---
 
-## 2. Problem Definition
+# Problem Definition
 
 - Mathematical equivalence
 - Non-intrusive and interceptive API
 - High performance
-
----
-
-## 3. Main Contribution of work
-
-- Design and implementation of a widely adopted industrial state-of-the-art distributed training solution
-- Real-world caveats that were overlooked by prior work
-- Performance tuning experiences collected from users and summarized several directions for future improvements
 
 ---
 
