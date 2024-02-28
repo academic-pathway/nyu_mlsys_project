@@ -24,25 +24,34 @@ Sanho Lee (shl8607), Euijae Kim (ek3955)
 
 ## Large Datasets and Large Models
 
-- Necessitates the ability to scale out model training to more computational resources.
+- Demand the ability to scale out model training to more computational resources.
 
 ---
 
 # Problem Definition
 
-- Mathematical equivalence
-- Non-intrusive and interceptive API
-- High performance
+## Mathematical equivalence
+
+- Applications expect to harvest the same result model as if all training had been performed locally without model replication
+- DDP training and local training must be mathematically equivalent
+
+## Non-intrusive and interceptive API
+
+- No additional code change is required to integrate API into implementation
+- Allow the internal implementation to timely intercept signals to carry out communications and system optimizations
 
 ---
 
-## 4. Central Design/Idea (API)
+# Problem Definition (Cont.)
 
+## High performance
 
+-  Data parallel training is subject to subtle dependencies between computations and communications
+- The design and implementation have to explore the solution space to efficiently convert more resources into higher training throughput.
 
---- 
+---
 
-## 4. Central Design/Idea (Naive Solution of Gradient Reduction)
+# Naive Solution of Gradient Reduction
 
 ```python
 import torch
@@ -50,7 +59,7 @@ import torch
 
 ---
 
-## 4. Central Design/Idea (Gradient Bucketing)
+# Gradient Bucketing
 
 ![70%](./gradient_bucketing.png)
 

@@ -22,7 +22,7 @@ footer: MLSYS Presentation, SP24 [](https://code-cafe.nl)
 
 ## Large Datasets and Large Models
 
-- Demands the ability to scale out model training to more computational resources.
+- Demand the ability to scale out model training to more computational resources.
 
 ---
 # Main Contributions of the Work
