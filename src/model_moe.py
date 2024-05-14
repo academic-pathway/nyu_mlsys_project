@@ -7,7 +7,6 @@
 # The code is based on the TensorFlow implementation:
 # https://github.com/tensorflow/tensor2tensor/blob/master/tensor2tensor/utils/expert_utils.py
 
-
 import torch
 import torch.nn as nn
 from torch.distributions.normal import Normal

@@ -7,7 +7,7 @@ import torch.optim as optim
 import torchvision
 import torchvision.transforms as transforms
 
-from model_moe import MoE
+from model_moe_dynamic import MoE
 
 def run():
     transform = transforms.Compose(
